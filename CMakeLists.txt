@@ -23,7 +23,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
 # 自动查找src目录下所有的.cpp文件
 # 递归扫描src文件夹，把所有以.cpp结尾的文件路径都搜集起来,放到SOURCE这个变量里
-file(GLOB_RECURSE SOURCE "src/*.cpp")
+file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 # 生成可执行文件
 # 用上一步SOURCE里的源码,编译生成一个叫第一步中设置的项目名字的可执行程序 video_conference_server
