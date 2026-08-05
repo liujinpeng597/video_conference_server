@@ -37,7 +37,13 @@ namespace vcs{
                 return false;
             }
 
-            std::cout<<"[Init] TcpServer successfully listening on port"<<m_port<<std::endl;
+            //3.监听
+            if(listen(m_listen_fd,128)<0){
+                std::cerr<<"[Error] Listen failed."<<std::endl;
+                return false;
+            }
+
+            std::cout<<"[Init] TcpServer successfully listening on port "<<m_port<<std::endl;
             return true;
         }
 
