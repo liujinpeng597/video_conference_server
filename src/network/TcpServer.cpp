@@ -49,12 +49,14 @@ namespace vcs{
             socklen_t client_len = sizeof(client_addr);
 
             //阻塞等待客户端连接
-            int client_fd = accept(m_listen_fd,(struct sockaddr*)&client_addr,&client_len);
-            if(client_fd >= 0){
+            while(true){
+                int client_fd = accept(m_listen_fd,(struct sockaddr*)&client_addr,&client_len);
+                if(client_fd >= 0){
                 std::cout<<"[NetWork] Clinet connected! FD: "<<client_fd<<std::endl;
                 //TcpServer接到连接 转给处理连接的类
                 TcpConnection conn(client_fd);
                 conn.testReadHeader();
+                }
             }
         }
     }//namespace network
