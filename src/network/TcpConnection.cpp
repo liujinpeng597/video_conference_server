@@ -1,4 +1,5 @@
 #include "network/TcpConnection.h"
+#include "protocol/PacketDef.h"
 #include <iostream>
 #include <unistd.h>
 #include <sys/socket.h>
